@@ -7,7 +7,7 @@ pipeline
     agent any
 	 tools { 
         maven 'Maven 3.5.3' 
-        jdk 'jdk-1.8.0.161' 
+       // jdk 'jdk-1.8.0.161' 
     }
 	// Define Environemnt Variable 
     environment 
