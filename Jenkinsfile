@@ -15,8 +15,8 @@ pipeline
 	VERSION = 'latest'
         PROJECT = 'rcx-test-vf'
         IMAGE = 'rcx-test-vf:latest'
-        ECRURL = 'https://920995523917.dkr.ecr.us-east-1.amazonaws.com/rcx-test-vf'
-        CRED = 'ecr:us-east-1:demo_aws_cred'
+        ECRURL = 'https://254847454774.dkr.ecr.ap-southeast-1.amazonaws.com/rcx-test-vf'
+        CRED = 'ecr:ap-southeast-1:demo_aws_cred'
     }
     stages
     {
