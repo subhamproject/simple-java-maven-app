@@ -7,7 +7,7 @@ pipeline
     agent any
 	 tools { 
         maven 'Maven 3.5.3' 
-        jdk 'JDK 8' 
+        jdk 'jdk8' 
     }
 	// Define Environemnt Variable 
     environment 
@@ -37,14 +37,14 @@ pipeline
 	}
 	}
 	  
-	stage ('Initialize Mvn PATH') {
-            steps {
-                sh '''
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
-                ''' 
-            }
-        }
+	//stage ('Initialize Mvn PATH') {
+          //  steps {
+            //    sh '''
+            //        echo "PATH = ${PATH}"
+             //       echo "M2_HOME = ${M2_HOME}"
+            //    ''' 
+          //  }
+        } //
 	    stage('Mvn compile') {
       steps {
         sh 'mvn clean install'
