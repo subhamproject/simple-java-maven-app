@@ -49,7 +49,7 @@ pipeline
        }
 	    stage('Mvn compile') {
       steps {
-        sh 'mvn clean install'
+        sh 'mvn clean package'
       }
     }
 	// Build Docker image
