@@ -47,7 +47,7 @@ pipeline
                    }
 		   
        }
-	    stage('Mvn compile') {
+	    stage('Maven Build') {
       steps {
         sh 'mvn clean package'
       }
