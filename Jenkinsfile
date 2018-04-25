@@ -33,7 +33,7 @@ pipeline
 	{
 	steps 
 	{
-	git poll: true,url: 'https://github.com/subhamproject/docker-blog-post.git'
+	git poll: true,url: 'https://github.com/subhamproject/simple-java-maven-app.git'
 	}
 	}
 	  
