@@ -37,16 +37,16 @@ pipeline
 	}
 	}
 	  
-	stage ('Initialize Java PATH') {
-           steps {
+	//stage ('Initialize Java PATH') {
+          // steps {
 		  
-              sh '''
-		   export PATH="$PATH:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.161-0.b14.36.amzn1.x86_64/jre/bin"
-		   export JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.161-0.b14.36.amzn1.x86_64/jre/bin"
-		   '''
-                   }
+            //  sh '''
+		//   export PATH="$PATH:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.161-0.b14.36.amzn1.x86_64/jre/bin"
+		//   export JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.161-0.b14.36.amzn1.x86_64/jre/bin"
+		//   '''
+               //    }
 		   
-       }
+     //  }
 	    stage('Maven Build') {
       steps {
         sh 'mvn clean package'
