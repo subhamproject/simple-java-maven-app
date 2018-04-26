@@ -60,14 +60,16 @@ pipeline
         always
         {
             // make sure that the Docker image is removed
+            // Delete old unused images to houskeep diskspace
             sh '''
 	    docker rmi ${IMAGE} | true
 	    docker rmi $(docker images -q -f dangling=true) >> /dev/null
 	    '''
         }
 		success {
+	// clear work space
+	deleteDir()
       // notify users when the Pipeline fails
-      deleteDir()
       mail to: 'smandal@rythmos.com',
           subject: "Sucess: ${currentBuild.fullDisplayName}",
           body: "successfully build ${env.BUILD_URL}"
