@@ -20,14 +20,6 @@ pipeline
     }
     stages
     {
- // Clean workspace
-	stage ('Clear workspace')
-	{
-	steps{
-	deleteDir()
-	}
-	}
-	
 	// Clone git repository
 	//stage ('Clone repository') 
 	//{
@@ -108,4 +100,11 @@ pipeline
           body: "Build is not stable,Please check the logs ${env.BUILD_URL}"
     }
     }
+	post 
+	{
+		always
+		{
+		deleteDir()
+		}
+}
 }
