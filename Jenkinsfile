@@ -64,7 +64,7 @@ pipeline
             sh '''
 	    docker rmi ${IMAGE} | true
 	    docker rmi $(docker images -q -f dangling=true) >> /dev/null
-	    sh /opt/jenkins/clear-ecr-image.sh "$PROJECT"
+	    sh /opt/jenkins/clear-ecr-image.sh "$PROJECT"  >> /dev/null
 	    '''
         }
    	success {
