@@ -103,12 +103,4 @@ pipeline
           body: "Build is not stable,Please check the logs ${env.BUILD_URL}"
     }
     }
-    	post 
-	{
-		always
-		{
-		deleteDir()
-		}
-}
-}
 }
