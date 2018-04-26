@@ -46,7 +46,7 @@ pipeline
 	sh '''  
 	#!/bin/bash
 	 export PATH="$PATH:/usr/bin"
-	 aws ecr get-login --no-include-email |bash'
+	 aws ecr get-login --no-include-email |bash
 	   '''
 			  
 		    }
