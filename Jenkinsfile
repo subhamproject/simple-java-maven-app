@@ -67,6 +67,7 @@ pipeline
         }
 		success {
       // notify users when the Pipeline fails
+      deleteDir()
       mail to: 'smandal@rythmos.com',
           subject: "Sucess: ${currentBuild.fullDisplayName}",
           body: "successfully build ${env.BUILD_URL}"
