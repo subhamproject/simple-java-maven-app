@@ -62,7 +62,7 @@ pipeline
             // make sure that the Docker image is removed
             sh '''
 	    docker rmi ${IMAGE} | true
-	    docker rmi $(docker images -q -f dangling=true)
+	    docker rmi $(docker images -q -f dangling=true) >> /dev/null
 	    '''
         }
 		success {
