@@ -44,7 +44,7 @@ pipeline
 		steps
 		    {
 		     
-	  aws ecr get-login --no-include-email |bash
+	 sh 'aws ecr get-login --no-include-email |bash'
 			  
 		    }
 	     }
