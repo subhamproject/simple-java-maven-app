@@ -45,7 +45,7 @@ pipeline
 		    {
 	sh '''  
 	#!/bin/bash
-	 export PATH="$PATH:/usr/bin"
+	 export PATH="$PATH:/home/jenkins/.local/bin"
 	 aws ecr get-login --no-include-email |bash
 	   '''
 			  
