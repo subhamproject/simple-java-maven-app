@@ -39,15 +39,14 @@ pipeline
         }
 	     //  Login to ECR before pushing image
 	     
-	     stage('ECR login')
+	stage('ECR login')
 	     {
 		steps
-		     {
-		     script
-			     {
-				     aws ecr get-login --no-include-email |bash
-			     }
-		     }
+		    {
+		     
+	  aws ecr get-login --no-include-email |bash
+			  
+		    }
 	     }
 		// Push Docker images to AWS ECR Or Docker HUB as applicable
         stage('Push Image to ECR')
