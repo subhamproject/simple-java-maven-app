@@ -29,13 +29,13 @@ pipeline
 	}
 	
 	// Clone git repository
-	stage ('Clone repository') 
-	{
-	steps 
-	{
-	git poll: true,url: 'https://github.com/subhamproject/simple-java-maven-app.git'
-	}
-	}
+	//stage ('Clone repository') 
+	//{
+	//steps 
+	//{
+	//git poll: true,url: 'https://github.com/subhamproject/simple-java-maven-app.git'
+	//}
+	//}
 	  
 	//stage ('Initialize Java PATH') {
           // steps {
