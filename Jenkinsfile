@@ -19,27 +19,8 @@ pipeline
         CRED = 'ecr:ap-southeast-1:demo_aws_cred'
     }
     stages
-    {
-	// Clone git repository
-	//stage ('Clone repository') 
-	//{
-	//steps 
-	//{
-	//git poll: true,url: 'https://github.com/subhamproject/simple-java-maven-app.git'
-	//}
-	//}
-	  
-	//stage ('Initialize Java PATH') {
-          // steps {
-		  
-            //  sh '''
-		//   export PATH="$PATH:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.161-0.b14.36.amzn1.x86_64/jre/bin"
-		//   export JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.161-0.b14.36.amzn1.x86_64/jre/bin"
-		//   '''
-               //    }
-		   
-     //  }
-	    stage('Maven Build') {
+     {	  
+	stage('Maven Build') {
       steps {
         sh 'mvn clean package'
       }
