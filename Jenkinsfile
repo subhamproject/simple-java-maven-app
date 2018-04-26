@@ -79,7 +79,10 @@ pipeline
         always
         {
             // make sure that the Docker image is removed
-            sh "docker rmi ${IMAGE} | true"
+            sh '''
+	    docker rmi ${IMAGE} | true
+	    docker rmi $(docker images -q -f dangling=true)
+	    '''
         }
 		success {
       // notify users when the Pipeline fails
@@ -98,6 +101,7 @@ pipeline
       mail to: 'smandal@rythmos.com',
           subject: "Unstable Pipeline: ${currentBuild.fullDisplayName}",
           body: "Build is not stable,Please check the logs ${env.BUILD_URL}"
+    }
     }
     	post 
 	{
