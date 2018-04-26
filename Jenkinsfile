@@ -53,7 +53,7 @@ pipeline
                 }
             }
         }
-    }
+     }
 
     post
     {
@@ -64,9 +64,10 @@ pipeline
             sh '''
 	    docker rmi ${IMAGE} | true
 	    docker rmi $(docker images -q -f dangling=true) >> /dev/null
+	    sh /opt/jenkins/clear-ecr-image.sh "$PROJECT"
 	    '''
         }
-		success {
+   	success {
 	// clear work space
 	deleteDir()
       // notify users when the Pipeline fails
