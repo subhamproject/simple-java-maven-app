@@ -4,6 +4,7 @@ pipeline
     {
         buildDiscarder(logRotator(numToKeepStr: '15'))
     }
+	agent none
     // Define Environemnt Variable 
     environment 
     {
