@@ -20,7 +20,7 @@ pipeline
 	 docker 
 	 {
 	 image 'maven:3.5.3'
-     args '-v $HOME/.m2:/var/maven/.m2 -e MAVEN_CONFIG=/var/maven/.m2'
+         args '-v $HOME/.m2:/var/maven/.m2 -e MAVEN_CONFIG=/var/maven/.m2'
 	 }
 	 }
 	 steps {
@@ -37,6 +37,10 @@ pipeline
             {
                 script
                 {
+	       script {
+                    dir("${env.WORKSPACE}/target") {
+                        unstash 'package'
+                    }
                     // Build the docker image using a Dockerfile
 			docker.build('${IMAGE}')
                 }
