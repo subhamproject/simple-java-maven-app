@@ -38,7 +38,7 @@ pipeline
             {
                 script
                 {
-	         dir("${env.WORKSPACE}/target") {
+	         dir("${env.WORKSPACE}/target/test") {
                         unstash 'package'
                     }
                     // Build the docker image using a Dockerfile
