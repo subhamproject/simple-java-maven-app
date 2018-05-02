@@ -82,7 +82,7 @@ pipeline
 	    then
 	    docker rmi -f $IMG
 	    fi
-	    sh /opt/jenkins/clear-ecr-image.sh "$PROJECT"  >> /dev/null
+	    sh $HOME/clear-ecr-image.sh "$PROJECT"  >> /dev/null
 	    '''
         }
    	success {
