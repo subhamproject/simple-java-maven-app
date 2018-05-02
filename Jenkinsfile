@@ -82,7 +82,6 @@ pipeline
 	    then
 	    docker rmi -f $IMG
 	    fi
-	   // sh $HOME/clear-ecr-image.sh "$PROJECT"  >> /dev/null
 	    '''
         }
    	success {
