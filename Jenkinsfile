@@ -26,7 +26,7 @@ pipeline
 	 }
 	 steps {
                 sh 'mvn -Duser.home=/var/maven clean package'
-                dir("${env.WORKSPACE}/Pipeline-Testing/pipeline-jenkins/target") {
+                dir("${env.WORKSPACE}/target") {
                     stash name: 'package', includes: '*.jar'
                 }
             }
@@ -38,7 +38,7 @@ pipeline
             {
                 script
                 {
-	         dir("${env.WORKSPACE}/Pipeline-Testing/pipeline-jenkins/target") {
+	         dir("${env.WORKSPACE}/target") {
                         unstash 'package'
                     }
                     // Build the docker image using a Dockerfile
