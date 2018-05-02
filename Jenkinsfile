@@ -38,7 +38,7 @@ pipeline
             {
                 script
                 {
-	         dir("${env.WORKSPACE}/target/test") {
+	         dir("${env.WORKSPACE}/target") {
                         unstash 'package'
                     }
                     // Build the docker image using a Dockerfile
@@ -89,7 +89,7 @@ pipeline
 	    IMG=$(docker images -q -f dangling=true) >> /dev/null
 	    if [ -n $IMG ]
 	    then
-	    docker rmi -f $IMG
+	    docker rmi  $IMG >> /dev/null
 	    fi
 	    '''
         }
