@@ -46,7 +46,7 @@ pipeline
 	sh '''  
 	#!/bin/bash
 	 export PATH="$PATH:/home/jenkins/.local/bin"
-	 aws ecr get-login --no-include-email |bash
+	 aws ecr get-login --no-include-email --region us-east-1 |bash
 	   '''
 			  
 		    }
@@ -77,7 +77,11 @@ pipeline
             // Delete old unused images to houskeep diskspace
             sh '''
 	    docker rmi ${IMAGE} | true
-	    docker rmi $(docker images -q -f dangling=true) >> /dev/null
+	    IMG=$(docker images -q -f dangling=true) >> /dev/null
+	    if [ -n $IMG ]
+	    then
+	    docker rmi -f $IMG
+	    fi
 	    sh /opt/jenkins/clear-ecr-image.sh "$PROJECT"  >> /dev/null
 	    '''
         }
