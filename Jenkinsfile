@@ -86,7 +86,11 @@ pipeline
             // Delete old unused images to houskeep diskspace
             sh '''
 	    docker rmi ${IMAGE} | true
-	    docker rm $(docker ps -aq) | true >> /dev/null
+	    RUN=$(docker ps -aq) /dev/null
+	    if [ -n "$RUN" ]
+	    then
+	    docker rm -f $RUN
+	    fi
 	    IMG=$(docker images -q -f dangling=true) >> /dev/null
 	    if [ -n "$IMG" ]
 	    then
