@@ -21,11 +21,11 @@ pipeline
 	 docker 
 	 {
 	 image '920995523917.dkr.ecr.us-east-1.amazonaws.com/container-image:maven'
-         args '-v $HOME/.m2:$HOME/.m2 -e MAVEN_CONFIG=$HOME/.m2'
+         args '-v $HOME/.m2:/var/lib/jenkins/.m2 -e MAVEN_CONFIG=/var/lib/jenkins/.m2'
 	 }
 	 }
 	 steps {
-                sh 'mvn -Duser.home=$HOME clean package'
+                sh 'mvn -Duser.home=/var/lib/jenkins clean package'
                 dir("${env.WORKSPACE}/target") {
                     stash name: 'package', includes: '*.jar'
                 }
