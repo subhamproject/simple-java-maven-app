@@ -87,7 +87,7 @@ pipeline
             sh '''
 	    docker rmi ${IMAGE} | true
 	    IMG=$(docker images -q -f dangling=true) >> /dev/null
-	    if [ -n $IMG ]
+	    if [ -n "$IMG" ]
 	    then
 	    docker rmi  $IMG >> /dev/null
 	    fi
