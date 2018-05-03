@@ -25,7 +25,7 @@ pipeline
 	 }
 	 }
 	 steps {
-                sh 'mvn -Duser.home=/var/maven clean package'
+                sh 'mvn -Duser.home=$HOME clean package'
                 dir("${env.WORKSPACE}/target") {
                     stash name: 'package', includes: '*.jar'
                 }
