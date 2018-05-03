@@ -20,8 +20,8 @@ pipeline
 	 agent {
 	 docker 
 	 {
-	 image 'maven:3.5.3'
-         args '-v $HOME/.m2:/var/maven/.m2 -e MAVEN_CONFIG=/var/maven/.m2'
+	 image '920995523917.dkr.ecr.us-east-1.amazonaws.com/container-image:maven'
+         args '-v $HOME/.m2:$HOME/.m2 -e MAVEN_CONFIG=$HOME/.m2'
 	 }
 	 }
 	 steps {
