@@ -88,7 +88,6 @@ pipeline
             // make sure that the Docker image is removed
             // Delete old unused images to houskeep diskspace
             sh '''
-	    docker rmi ${IMAGE} | true
 	    RUN=$(docker ps -aq) >> /dev/null
 	    if [ -n "$RUN" ]
 	    then
