@@ -10,7 +10,7 @@ pipeline
     {
 	VERSION = 'maven'
         PROJECT = 'rcx-test-vf'
-        IMAGE = 'rcx-test-vf:latest'
+        IMAGE = 'rcx-test-vf:maven'
         ECRURL = 'https://920995523917.dkr.ecr.us-east-1.amazonaws.com/rcx-test-vf'
         CRED = 'ecr:ap-southeast-1:demo_aws_cred'
     }
