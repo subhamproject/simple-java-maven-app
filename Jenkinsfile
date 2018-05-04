@@ -42,7 +42,10 @@ pipeline
                   //      unstash 'package'
                 //    }
                     // Build the docker image using a Dockerfile
-			docker.build('${IMAGE}')
+			//docker.build('${IMAGE}')
+		       sh '''
+		       docker build -t "$IMAGE" .
+		       '''
                 }
             }
         }
