@@ -36,8 +36,8 @@ pipeline
         {
             steps
             {
-               // script
-              //  {
+                script
+               {
 	         //dir("${env.WORKSPACE}/target") {
                   //      unstash 'package'
                 //    }
