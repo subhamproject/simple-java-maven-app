@@ -1,4 +1,4 @@
 maven:
   build: .
   dockerfile: Dockerfile.multi
-  image: $IMAGE
+  image: $ECRURL
