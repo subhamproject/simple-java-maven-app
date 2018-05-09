@@ -40,9 +40,10 @@ pipeline
                 {
 	         //dir("${env.WORKSPACE}/target") //{
               //          unstash 'package'
-                    }
-                    // Build the docker image using a Dockerfile
-			docker.build('${IMAGE}')
+                   // }
+                    sh '''
+		    docker-compose build
+		    '''
                 }
             }
         }
