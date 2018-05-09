@@ -1,4 +1,4 @@
 maven:
   build: .
   dockerfile: Dockerfile.multi
-  image: $ECRURL
+  image: 'https://920995523917.dkr.ecr.us-east-1.amazonaws.com/rcx-test-vf'
