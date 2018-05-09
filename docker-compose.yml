@@ -6,7 +6,7 @@ version: '2'
 services:
 
   maven:
-    image: my.image.name:rc2
+    image: rcx-test-vf:maven
     build:
       context: .
       dockerfile: Dockerfile.multi
