@@ -44,7 +44,7 @@ pipeline
                     sh '''
 		    #!/bin/bash
 		    export PATH="$PATH:/usr/local/bin"
-		    docker-compose build
+		    /usr/local/bin/docker-compose build
 		    '''
                 }
             }
