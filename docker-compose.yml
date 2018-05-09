@@ -1,7 +1,3 @@
-##maven:
-## # build: .
-  #dockerfile: Dockerfile.multi
-  
 version: '2'
 services:
 
