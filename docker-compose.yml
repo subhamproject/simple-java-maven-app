@@ -2,8 +2,8 @@ version: '2'
 services:
   maven-app:
      image: maven:3.5-jdk-8
-     privileged: true
-     user: root
+     #privileged: true
+     #user: root
      volumes:
        - /var/lib/jenkins/workspace/maven:/var/lib/jenkins/workspace/maven
        - /var/lib/jenkins/workspace/maven/.m2:$HOME/.m2
