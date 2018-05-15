@@ -2,7 +2,7 @@ version: '2'
 services:
 
   maven-app:
-    user: root
+    user: jenkins
     image: maven:3.5-jdk-8
     volumes:
        - ${pwd}:${pwd}
