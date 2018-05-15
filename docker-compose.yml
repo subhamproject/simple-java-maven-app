@@ -8,4 +8,4 @@ services:
        - /var/lib/jenkins/workspace/maven:/var/lib/jenkins/workspace/maven
     # entrypoint: $WORKSPACE/build.sh
      working_dir: /var/lib/jenkins/workspace/maven
-     entrypoint: build.sh
+     entrypoint: /var/lib/jenkins/workspace/maven/build.sh
