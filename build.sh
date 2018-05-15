@@ -1,3 +1,3 @@
 #!/bin/bash
-cd $(basename $0)
+cd $(basename $WORKSPACE)
 mvn clean package
