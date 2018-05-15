@@ -6,6 +6,7 @@ services:
      user: root
      volumes:
        - /var/lib/jenkins/workspace/maven:/var/lib/jenkins/workspace/maven
+       - /var/lib/jenkins/workspace/maven/.m2:$HOME/.m2
     # entrypoint: $WORKSPACE/build.sh
      working_dir: /var/lib/jenkins/workspace/maven
      entrypoint: /var/lib/jenkins/workspace/maven/build.sh
