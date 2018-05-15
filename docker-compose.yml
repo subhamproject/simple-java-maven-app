@@ -3,7 +3,7 @@ services:
   maven-app:
      image: maven:3.5-jdk-8
      privileged: true
-     user: jenkins
+     user: root
      volumes:
        - $WORKSPACE/.m2:$HOME/.m2
        - $WORKSPACE:$WORKSPACE
