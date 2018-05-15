@@ -4,5 +4,5 @@ services:
   maven-app:
     image: maven:3.5-jdk-8
     volumes:
-       - ${workspace}:${workspace}
-    entrypoint: ${workspace}/build.sh
+       - ${pwd}:${pwd}
+    entrypoint: ${pwd}/build.sh
