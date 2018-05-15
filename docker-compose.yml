@@ -2,7 +2,7 @@ version: '2'
 services:
   maven-app:
      image: maven:3.5-jdk-8
-     user: root
+     user: 997
      volumes:
        - $WORKSPACE/.m2:$HOME/.m2
        - $WORKSPACE:$WORKSPACE
