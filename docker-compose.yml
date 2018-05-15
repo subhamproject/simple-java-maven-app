@@ -7,4 +7,4 @@ services:
      volumes:
        - $WORKSPACE/.m2:$HOME/.m2
        - $WORKSPACE:$WORKSPACE
-     entrypoint: $WORKSPACE/build.sh
+    # entrypoint: $WORKSPACE/build.sh
