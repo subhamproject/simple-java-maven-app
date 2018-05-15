@@ -3,6 +3,7 @@ services:
 
   maven-app:
     image: maven:3.5-jdk-8
+    user: root
     volumes:
        - ${pwd}:${pwd}
     entrypoint: ${pwd}/build.sh
