@@ -10,7 +10,7 @@ pipeline {
       steps {
         script {
           sh '''
-            SBI/build.sh
+           build.sh
           '''
         }
       }
