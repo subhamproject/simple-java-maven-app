@@ -10,7 +10,9 @@ services:
       - "${WORKSPACE}:${WORKSPACE}:rw"
      working_dir: "${WORKSPACE}"
      entrypoint: "mvn clean package"
+     
   maven-app-package:
-     build: .
-     context: docker
+     build:
+     context: ./docker
+     dockerfile: Dockerfile.maven
      image: rcx-java-maven
