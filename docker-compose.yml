@@ -11,7 +11,7 @@ services:
      working_dir: "${WORKSPACE}"
      entrypoint: "mvn clean package"
      
-  maven-app-package:
+  maven-app-image:
      build:
      context: ./docker
      dockerfile: Dockerfile.maven
