@@ -15,8 +15,8 @@ services:
      build:
        context: .
        dockerfile: Dockefile.develop
-     image: rcx-java-maven
+     image: rcx-java-maven:latest
 
   maven-app-image-docker:
      build: .
-     image: rcx-java-maven-docker
+     image: rcx-java-maven-docker:latest
