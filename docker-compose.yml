@@ -9,4 +9,4 @@ services:
       - "${JENKINS_HOME}:${JENKINS_HOME}:rw"
       - "${WORKSPACE}:${WORKSPACE}:rw"
      working_dir: "${WORKSPACE}"
-     entrypoint: "build.sh"
+     entrypoint: "mvn clean package"
