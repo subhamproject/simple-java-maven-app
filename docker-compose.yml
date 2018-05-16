@@ -19,4 +19,4 @@ services:
 
   maven-app-image-docker:
      build: .
-     image: rcx-java-maven
+     image: rcx-java-maven-docker
