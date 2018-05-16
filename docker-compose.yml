@@ -7,6 +7,6 @@ services:
       - /etc/passwd:/etc/passwd:ro
       - /etc/group:/etc/group:ro
       #- "${JENKINS_HOME}/.m2:${JENKINS_HOME}/.m2"
-      - "${JENKINS_HOME}:${JENKINS_HOME}"
-      - "${WORKSPACE}:${WORKSPACE}"
+      - "${JENKINS_HOME}:${JENKINS_HOME}:rw"
+      - "${WORKSPACE}:${WORKSPACE}:rw"
      entrypoint: mvn clean package
