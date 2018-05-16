@@ -1,15 +1,5 @@
 version: '2'
 services:
-  maven-app:
-     user: "997:994"
-     image: maven:3.5-jdk-8
-     volumes:
-      - /etc/passwd:/etc/passwd:ro
-      - /etc/group:/etc/group:ro
-      - "${JENKINS_HOME}:${JENKINS_HOME}:rw"
-      - "${WORKSPACE}:${WORKSPACE}:rw"
-     working_dir: "${WORKSPACE}"
-     entrypoint: "mvn clean package"
      
   maven-app-build:
      user: "997:994"
@@ -28,4 +18,4 @@ services:
 
   maven-app-image-docker:
      build: .
-image: rcx-java-maven-docker:latest
+     image: rcx-java-maven-docker:latest
