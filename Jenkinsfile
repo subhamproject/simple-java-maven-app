@@ -10,7 +10,7 @@ pipeline {
       steps {
         script {
           sh '''
-           build.sh
+           'build.sh'
           '''
         }
       }
