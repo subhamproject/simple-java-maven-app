@@ -17,6 +17,6 @@ services:
        dockerfile: Dockerfile.maven
      image: rcx-java-maven
 
-maven-app-image-docker:
+  maven-app-image-docker:
      build: .
      image: rcx-java-maven
