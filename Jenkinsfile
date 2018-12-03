@@ -10,7 +10,7 @@ pipeline {
      genericVariables: [
       [key: 'ref', value: '$.ref']
       //[key: 'changed_files', value: "$.commits[*].['modified','added','removed'][*]"]
-        [key: 'changed_files', value: '$.changed_files'] 
+        //[key: 'changed_files', value: '$.changed_files'] 
      ],
      
      causeString: 'Triggered on $ref',
@@ -22,9 +22,9 @@ pipeline {
      
      silentResponse: false,
     
-     regexpFilterText: '$ref $changed_files',
+     regexpFilterText: '$ref',
      //regexpFilterExpression: 'refs/heads/' + BRANCH_NAME
-       regexpFilterExpression: 'jenkins_java/src/main/java/com/[^"]+?'
+       regexpFilterExpression: 'src/main/java/com/[^"]+?'
     )
   }
     stages {
