@@ -5,28 +5,35 @@ pipeline {
             args '-v /root/.m2:/root/.m2'
         }
     }
-    triggers {
-    GenericTrigger(
-     genericVariables: [
-      [key: 'ref', value: '$.ref']
-      //[key: 'changed_files', value: "$.commits[*].['modified','added','removed'][*]"]
-        //[key: 'changed_files', value: '$.changed_files'] 
-     ],
-     
-     causeString: 'Triggered on $ref',
-     
-     token: 'env.JOB_NAME',
-     
-     printContributedVariables: true,
-     printPostContent: true,
-     
-     silentResponse: false,
-    
-     regexpFilterText: '$ref',
-     //regexpFilterExpression: 'refs/heads/' + BRANCH_NAME
-       regexpFilterExpression: 'src/main/java/com/[^"]+?'
-    )
-  }
+  properties([
+  pipelineTriggers([
+   [$class: 'GenericTrigger',
+    genericVariables: [
+     [key: 'reference', value: '$.ref'],
+     [
+      key: 'before',
+      value: '$.before',
+      expressionType: 'JSONPath', //Optional, defaults to JSONPath
+      regexpFilter: '', //Optional, defaults to empty string
+      defaultValue: '' //Optional, defaults to empty string
+     ]
+    ],
+    genericRequestVariables: [
+     [key: 'requestWithNumber', regexpFilter: '[^0-9]'],
+     [key: 'requestWithString', regexpFilter: '']
+    ],
+    genericHeaderVariables: [
+     [key: 'headerWithNumber', regexpFilter: '[^0-9]'],
+     [key: 'headerWithString', regexpFilter: ''],
+     [key: 'X-GitHub-Event', regexpFilter: '']
+    ],
+    printContributedVariables: true,
+    printPostContent: true,
+    regexpFilterText: '',
+    regexpFilterExpression: ''
+   ]
+  ])
+ ])
     stages {
         stage('Build') {
             steps {
