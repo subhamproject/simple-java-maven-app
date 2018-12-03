@@ -10,7 +10,7 @@ pipeline {
      genericVariables: [
       [key: 'ref', value: '$.ref']
       //[key: 'changed_files', value: "$.commits[*].['modified','added','removed'][*]"]
-        [key: 'changed_files', value: '$.changed_files' expressionType: 'JSONPath']
+        [key: 'changed_files', value: '$.changed_files', expressionType: 'JSONPath'] 
      ],
      
      causeString: 'Triggered on $ref',
