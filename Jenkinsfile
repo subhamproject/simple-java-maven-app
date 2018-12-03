@@ -8,7 +8,13 @@ pipeline {
     triggers {
     GenericTrigger(
     genericVariables: [
-     [key: 'ref', value: '$.ref']
+     [key: 'ref', value: '$.ref'
+     expressionType: 'JSONPath',
+     ]
+     [
+         key: 'changed_files', value: '$.changed_files',
+         expressionType: 'JSONPath',
+     ]
     ],
      
     causeString: 'Triggered on $ref',
@@ -20,8 +26,9 @@ pipeline {
      
     silentResponse: false,
     
- regexpFilterText: '$ref',
-    regexpFilterExpression: 'refs/heads/' + BRANCH_NAME
+ regexpFilterText: '$ref','$changed_files',
+    //regexpFilterExpression: 'refs/heads/' + BRANCH_NAME
+      regexpFilterExpression:  'jenkins_java/src/main/java/com/[^"]+?'
    )
  }
     stages {
