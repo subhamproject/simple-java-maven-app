@@ -8,9 +8,7 @@ pipeline {
     triggers {
     GenericTrigger(
     genericVariables: [
-     [key: 'ref', value: '$.ref'
-     expressionType: 'JSONPath',
-     ],
+     [key: 'ref', value: '$.ref'],
      [
          key: 'changed_files', value: '$.changed_files',
          expressionType: 'JSONPath',
