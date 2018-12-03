@@ -5,7 +5,7 @@ pipeline {
             args '-v /root/.m2:/root/.m2'
         }
     }
-  options([
+   options{
   pipelineTriggers([
    [$class: 'GenericTrigger',
     genericVariables: [
@@ -33,7 +33,7 @@ pipeline {
     regexpFilterExpression: ''
    ]
   ])
- ])
+   }
     stages {
         stage('Build') {
             steps {
