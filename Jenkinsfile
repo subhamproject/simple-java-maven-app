@@ -13,7 +13,7 @@ pipeline {
      
     causeString: 'Triggered on $ref',
      
-    token: 'abc123',
+    token: 'env.JOB_NAME',
      
     printContributedVariables: true,
      printPostContent: true,
