@@ -14,7 +14,7 @@ pipeline {
      [
          key: 'changed_files', value: '$.changed_files',
          expressionType: 'JSONPath',
-     ],
+     ]
     ],
      
     causeString: 'Triggered on $ref',
