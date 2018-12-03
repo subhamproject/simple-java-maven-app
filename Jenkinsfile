@@ -9,6 +9,7 @@ pipeline {
     GenericTrigger(
      genericVariables: [
       [key: 'ref', value: '$.ref']
+      [key: 'changed_files', value: '$.commits[*].['modified','added','removed'][*]']
      ],
      
      causeString: 'Triggered on $ref',
@@ -20,7 +21,7 @@ pipeline {
      
      silentResponse: false,
     
-     regexpFilterText: '$ref',
+     regexpFilterText: '$ref $changed_files',
      //regexpFilterExpression: 'refs/heads/' + BRANCH_NAME
        regexpFilterExpression: 'jenkins_java/src/main/java/com/[^"]+?'
     )
