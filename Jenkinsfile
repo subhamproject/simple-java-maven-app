@@ -5,25 +5,25 @@ pipeline {
             args '-v /root/.m2:/root/.m2'
         }
     }
-    triggers {
-    GenericTrigger(
-     genericVariables: [
-      [key: 'ref', value: '$.ref']
-     ],
+  //  triggers {
+  //  GenericTrigger(
+   //  genericVariables: [
+   //   [key: 'ref', value: '$.ref']
+   //  ],
      
-     causeString: 'Triggered on $ref',
+   //  causeString: 'Triggered on $ref',
      
-     token: 'abc123',
+ //    token: 'abc123',
      
-     printContributedVariables: true,
-     printPostContent: true,
+ //    printContributedVariables: true,
+   //  printPostContent: true,
      
-     silentResponse: false,
+  //   silentResponse: false,
     
-     regexpFilterText: '$ref',
-     regexpFilterExpression: 'refs/heads/' + BRANCH_NAME
-    )
-  }
+//  regexpFilterText: '$ref',
+  //   regexpFilterExpression: 'refs/heads/' + BRANCH_NAME
+ //   )
+//  }
     stages {
         stage('Build') {
             steps {
