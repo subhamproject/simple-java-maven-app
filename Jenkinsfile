@@ -7,28 +7,24 @@ pipeline {
     }
     triggers {
     GenericTrigger(
-    genericVariables: [
-     [key: 'ref', value: '$.ref'],
-     [
-         key: 'changed_files', value: '$.changed_files',
-         expressionType: 'JSONPath',
-     ]
-    ],
+     genericVariables: [
+      [key: 'ref', value: '$.ref']
+     ],
      
-    causeString: 'Triggered on $ref',
+     causeString: 'Triggered on $ref',
      
-    token: 'env.JOB_NAME',
+     token: 'env.JOB_NAME',
      
-    printContributedVariables: true,
+     printContributedVariables: true,
      printPostContent: true,
      
-    silentResponse: false,
+     silentResponse: false,
     
- regexpFilterText: '$ref','$changed_files',
-    //regexpFilterExpression: 'refs/heads/' + BRANCH_NAME
-      regexpFilterExpression:  'jenkins_java/src/main/java/com/[^"]+?'
-   )
- }
+     regexpFilterText: '$ref',
+     //regexpFilterExpression: 'refs/heads/' + BRANCH_NAME
+       regexpFilterExpression: 'jenkins_java/src/main/java/com/[^"]+?'
+    )
+  }
     stages {
         stage('Build') {
             steps {
