@@ -10,11 +10,11 @@ pipeline {
     genericVariables: [
      [key: 'ref', value: '$.ref'
      expressionType: 'JSONPath',
-     ]
+     ],
      [
          key: 'changed_files', value: '$.changed_files',
          expressionType: 'JSONPath',
-     ]
+     ],
     ],
      
     causeString: 'Triggered on $ref',
