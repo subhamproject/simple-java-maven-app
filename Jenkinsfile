@@ -12,6 +12,7 @@ pipeline {
       [expressionType: 'JSONPath', key: 'changed_files', regexpFilterExpression: "\$.commits[*].['modified','added','removed'][*]", value: '$.changed_files']
      ],
      causeString: 'Generic webhook trigger',
+     token: env.JOB_NAME,
      regexpFilterExpression: 'src/main/java/com/[^"]+?' + BRANCH_NAME,
      regexpFilterText: '$changed_files $ref',
      printContributedVariables: true,
