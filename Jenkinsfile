@@ -9,7 +9,7 @@ pipeline {
     GenericTrigger(
      genericVariables: [
      // [expressionType: 'JSONPath', key: 'ref', value: '$.ref'],
-      [expressionType: 'JSONPath', key: 'changed_files', regexpFilterExpression: "$.commits[*].['modified','added','removed'][*]", value: '$.changed_files']
+      [expressionType: 'JSONPath', key: 'changed_files', regexpFilterExpression: "\\$.commits[*].['modified','added','removed'][*]", value: '$.changed_files']
      ],
      causeString: 'Generic webhook trigger',
      regexpFilterExpression: 'src/main/java/com/[^"]+?' + BRANCH_NAME,
