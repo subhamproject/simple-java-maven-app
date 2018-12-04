@@ -9,7 +9,7 @@ pipeline {
     GenericTrigger(
      genericVariables: [
       [key: 'ref', value: '$.ref'],
-      [key: 'repository', regexpFilter: '[^a-z_-]', value: '$.repository']
+      [key: 'changed_files', regexpFilter: '$.commits[*].['modified','added','removed'][*]', value: '$.changed_files']
      ],
      causeString: 'Triggered on $ref',
      regexpFilterExpression: 'generic refs/heads/' + BRANCH_NAME,
